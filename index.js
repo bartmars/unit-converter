@@ -1,9 +1,3 @@
-/*
-1 meter = 3.281 feet
-1 liter = 0.264 gallon
-1 kilogram = 2.204 pound
-*/
-
 const convertIp = document.getElementById("convert-ip")
 const convertBtn = document.getElementById("convert-btn")
 let lengthP = document.getElementById("length-p")
@@ -11,11 +5,15 @@ let volumeP = document.getElementById("volume-p")
 let massP = document.getElementById("mass-p")
 
 
-let number = convertIp.value
+
+
 
 convertBtn.addEventListener("click", function() {
-    console.log("clicky-the-click")
-
+    reset()
+    let number = convertIp.value
+    /*
+    1 meter = 3.281 feet, 1 liter = 0.264 gallon, 1 kilogram = 2.204 pound
+    */
     let lengthToFeet = multiply(number, 3.281)
     let lengthToMeter = divide(number, 3.281)    
     let volumeToGallons = multiply(number, 0.264)
@@ -27,6 +25,11 @@ convertBtn.addEventListener("click", function() {
     volumeP.textContent = `${number} liters = ${volumeToGallons.toFixed(3)} gallons | ${number} gallons = ${volumeToLiters.toFixed(3)} liters`
     massP.textContent = `${number} kilos = ${massToPounds.toFixed(3)} pounds | ${number} pounds = ${massToKilograms.toFixed(3)} kilos`
 })
+
+function reset() {
+    number = 0
+}
+
 
 function multiply(num1, num2) {
     return num1 * num2
