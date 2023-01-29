@@ -4,10 +4,6 @@ let lengthP = document.getElementById("length-p")
 let volumeP = document.getElementById("volume-p")
 let massP = document.getElementById("mass-p")
 
-
-
-
-
 convertBtn.addEventListener("click", function() {
     reset()
     let number = convertIp.value
@@ -29,7 +25,6 @@ convertBtn.addEventListener("click", function() {
 function reset() {
     number = 0
 }
-
 
 function multiply(num1, num2) {
     return num1 * num2
